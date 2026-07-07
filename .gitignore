@@ -1,0 +1,28 @@
+# VS Code
+.vscode/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+node_modules/
+dist/
+.vite/
+
+# Backend
+backend/target/
+target/
+*.class
+*.log
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

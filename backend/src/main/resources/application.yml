@@ -1,0 +1,31 @@
+server:
+  port: 3188
+
+spring:
+  application:
+    name: civicmind-ai
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: civicmind
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-ms: 86400000
+
+  cors:
+    allowed-origins: ${FRONTEND_URL:http://localhost:1945}
+
+  ai:
+    api-key: ${GEMINI_API_KEY:}
+    model: ${AI_MODEL:gemini-2.5-flash}
+
+  official:
+    email: ${OFFICIAL_EMAIL:}
+    password: ${OFFICIAL_PASSWORD:}
+
+  admin:
+    email: ${ADMIN_EMAIL:}
+    password: ${ADMIN_PASSWORD:}
