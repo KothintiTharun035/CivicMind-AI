@@ -1,17 +1,30 @@
 import axios from 'axios'
 
+// =========================
+// API BASE URL
+// =========================
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ||
+  'https://civicmind-ai-xuhf.onrender.com'
+
+// =========================
+// AXIOS INSTANCE
+// =========================
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API_BASE_URL}/api`,
 })
 
 // =========================
 // JWT TOKEN INTERCEPTOR
 // =========================
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('civicmind_token')
+  const token = localStorage.getItem(
+    'civicmind_token'
+  )
 
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`
+    config.headers.Authorization =
+      `Bearer ${token}`
   }
 
   return config
@@ -32,7 +45,6 @@ export const authAPI = {
 // ISSUE API
 // =========================
 export const issueAPI = {
-
   getAll: () =>
     api.get('/issues'),
 
@@ -96,14 +108,12 @@ export const issueAPI = {
 // ADMIN API
 // =========================
 export const adminAPI = {
-
   getAllUsers: () =>
     api.get('/admin/users'),
 
   getAnalytics: () =>
     api.get('/admin/analytics'),
 
-  // Get OFFICIAL users only
   getOfficials: () =>
     api.get('/admin/officials'),
 
