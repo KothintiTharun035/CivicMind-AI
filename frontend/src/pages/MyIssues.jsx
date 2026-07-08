@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { issueAPI } from '../services/api'
+import { formatDateTime } from '../utils/dateTime'
+
 
 const statusColors = {
   PENDING: 'bg-gray-100 text-gray-700',
@@ -142,9 +144,7 @@ export default function MyIssues() {
               </span>
 
               <span>
-                {issue.createdAt
-                  ? new Date(issue.createdAt).toLocaleDateString()
-                  : '-'}
+                {formatDateTime(issue.createdAt)}
               </span>
 
             </div>

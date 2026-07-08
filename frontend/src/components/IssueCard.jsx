@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { formatDateTime } from '../utils/dateTime'
+
 
 const urgencyColors = {
   LOW: 'bg-green-100 text-green-700',
@@ -125,11 +127,7 @@ export default function IssueCard({
           </span>
 
           <span className="flex-shrink-0">
-            {issue.createdAt
-              ? new Date(
-                  issue.createdAt
-                ).toLocaleDateString()
-              : '-'}
+            {formatDateTime(issue.createdAt)}
           </span>
 
         </div>

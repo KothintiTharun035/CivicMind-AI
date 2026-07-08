@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { issueAPI } from '../services/api'
+import { formatDateTime } from '../utils/dateTime'
+
 
 
 
@@ -46,41 +48,6 @@ const timelineColors = {
 // FORMAT RENDER UTC TIME
 // TO INDIA STANDARD TIME
 // =========================
-const formatDateTime = (dateValue) => {
-  if (!dateValue) return '-'
-
-  try {
-    const dateString = String(dateValue)
-
-    // Spring LocalDateTime has no timezone.
-    // Render runs in UTC, so mark timezone-less
-    // backend timestamps as UTC.
-    const normalizedDate =
-      dateString.endsWith('Z') ||
-      /[+-]\d{2}:\d{2}$/.test(dateString)
-        ? dateString
-        : `${dateString}Z`
-
-    const date = new Date(normalizedDate)
-
-    if (Number.isNaN(date.getTime())) {
-      return '-'
-    }
-
-    return date.toLocaleString('en-IN', {
-      timeZone: 'Asia/Kolkata',
-      day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true,
-    })
-  } catch {
-    return '-'
-  }
-}
 
 
 
@@ -386,11 +353,7 @@ const displayStatus = latestEvent
                       
 
                           <span className="text-sm text-gray-500">
-                            {event.date
-                              ? new Date(
-                                  event.date
-                                ).toLocaleString()
-                              : '-'}
+                            {formatDateTime(event.date)}
                           </span>
 
                         </div>
