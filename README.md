@@ -367,7 +367,6 @@ OFFICIAL_EMAIL=your_official_email
 OFFICIAL_PASSWORD=your_official_password
 ```
 
-> Never commit real environment variable values, API keys, database credentials, or passwords to GitHub.
 
 ### Frontend Environment Variable
 
