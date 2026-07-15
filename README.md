@@ -346,6 +346,52 @@ RESOLVED
 
 ---
 
+# 📸 Application Screenshots
+
+## 🔐 Login Page
+
+[CivivmindAI-login-page](CivicmindAI-login-page.jpeg)
+
+---
+
+## 📝 Register Page
+
+[CivicmindAI-register-page](CivicmindAI-register-page.jpeg)
+
+---
+
+## 👤 Citizen Reporting Issue
+
+![Citizen-issues-reporting](Citizen-issue-reporting.jpeg)
+
+---
+
+## 👤 Citizen Issues
+
+![Civic-citizen-issues](Civic-citizen-issues.jpeg)
+
+
+## 👤 Citizen Assignment History
+
+![Issue-assignment-history](Issue-assignment-history.jpeg)
+
+
+## 🏛️ Adminstration Dashboard
+
+![Civicadminstration-dashboard](Civicadminstration-dashboard.jpeg)
+
+![Civicaiadmin-dashboard](Civicaiadmin-dashboard.jpeg)
+
+
+## 👨‍💼 Official Dashboard
+
+![Civicaiofficial-dashboard](Civicaiofficial-dashboard.jpeg)
+
+
+
+
+---
+
 ## ⚙️ Environment Variables
 
 ### Backend Environment Variables
